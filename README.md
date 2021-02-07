@@ -1,2 +1,2 @@
 # MartMax
-ASP.NET 5 and Angular simple company app
+ASP.NET 5 and React simple company app
