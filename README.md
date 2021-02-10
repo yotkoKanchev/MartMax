@@ -1,2 +1,3 @@
 # MartMax
-ASP.NET 5 and React simple company app
+
+Simple company app, build using ReactJs and Firebase
