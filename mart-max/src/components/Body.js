@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 const Body = () =>
 (
-    <div>MAX MART Body</div>
+    <div>
+        <div>MAX MART Body</div>
+        <button className="btn btn-primary">TEST</button>
+    </div>
 )
 
 export default Body
