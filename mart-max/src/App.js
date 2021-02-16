@@ -1,16 +1,16 @@
 import './App.css';
-import Body from './components/shared/body'
-import Header from './components/shared/header'
-import Footer from './components/shared/footer'
+import React from "react";
 
-function App() {
+import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
+import AppRouter from './components/AppRouter';
+
+export default function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
-      <Body />
+      <AppRouter />
       <Footer />
-    </div>
+    </div >
   );
 }
-
-export default App;
