@@ -1,33 +1,14 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+@import "fonts/icomoon/style.css";
+@import "styles/bootstrap.min.css";
+@import "styles/magnific-popup.css";
+@import "styles/jquery-ui.css";
+@import "styles/owl.carousel.min.css";
+@import "styles/owl.theme.default.min.css";
+@import "styles/lightgallery.min.css";
+@import "styles/bootstrap-datepicker.css";
+@import "fonts/flaticon//font/flaticon.css";
+@import "styles/swiper.css";
+@import "styles/style.css";
+@import "styles/animations.css";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
-@import "reset.css" ;
-
-body {
-  text-align: center;
-}
-
-.navigation {
-  display: flex;
-}
-
-.navigation li {
-  padding-right: 50px;
-}
-
-.active-link{
-  font-weight: 900;
-  color:red;
-}

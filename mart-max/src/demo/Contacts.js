@@ -20,7 +20,7 @@ const Contacts = () => {
 
     const addOrEdit = obj => {
         if (currentId == '')
-            firebaseDb.child('contacts').push(
+            firebaseDb.child('contacts').push( // ADD firebase write and edit roles for authenticated user "write: 'auth' != null"
                 obj,
                 err => {
                     if (err)

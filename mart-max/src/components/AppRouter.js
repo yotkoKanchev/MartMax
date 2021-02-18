@@ -16,7 +16,7 @@ const AppRouter = () => (
     //     </Switch>
     // </Router>
 
-    <div>
+    <div className="site-main">
         <Switch>
             <Route path="/about"><About /></Route>
             <Route path="/body"><Body /></Route>

@@ -8,16 +8,16 @@ import Contacts from './demo/Contacts';
 
 export default function App() {
   return (
-    // <div>
-    //   <Header />
-    //   <AppRouter />
-    //   <Footer />
-    // </div >
+    <div >
+      <Header />
+      <AppRouter />
+      <Footer />
+    </div >
 
-    <div className='row'>
-      <div className='col-md-8 offset-md-2'>
-        <Contacts />
-      </div>
-    </div>
+    // <div className='row'>
+    //   <div className='col-md-8 offset-md-2'>
+    //     <Contacts />
+    //   </div>
+    // </div>
   );
 }
