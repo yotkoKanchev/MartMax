@@ -4,7 +4,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
     const date = year > 2021 ? `2021 - ${year}` : 2021
     return (
-        <div className="footer py-4">
+        <footer className="footer py-4">
             <div className="container-fluid text-center">
                 <p>All rights Reserved {date} &copy; MAXMART
             {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
@@ -14,7 +14,7 @@ const Footer = () => {
                     {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
                 </p>
             </div>
-        </div>
+        </footer>
     )
 }
 

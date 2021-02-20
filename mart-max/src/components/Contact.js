@@ -1,4 +1,5 @@
 import React from 'react'
+// TODO address info comes from Firebase !
 
 const Contact = () =>
 (

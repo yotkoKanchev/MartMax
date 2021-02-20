@@ -1,9 +1,11 @@
 import React from 'react'
-import heating from './../images/Index/heating_sm.jpg'
-import air_conditioning from './../images/Index/air-conditioning_sm.jpg'
-import projectWork from './../images/Index/projectWork_sm.jpg'
-import ventilation from './../images/Index/ventilation_sm.png'
+import heating from './../images/heating.jpg'
+import air_conditioning from './../images/ac.jpg'
+import design from './../images/design.jpg'
+import ventilation from './../images/ventilation.png'
 import { NavLink } from "react-router-dom";
+
+// TODO Images urls comes from Firebase !
 
 
 const Home = () =>
@@ -52,7 +54,7 @@ const Home = () =>
                         <div className="image-info">
                             <h2 className="mb-3">Проектиране</h2>
                         </div>
-                        <img src={projectWork} alt="Image" className="img-fluid" />
+                        <img src={design} alt="Image" className="img-fluid" />
                     </div>
                     </NavLink>
                 </div>
