@@ -31,7 +31,7 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <NavLink to="/body" activeClassName="active-link">За Нас</NavLink>
+                                    <NavLink to="/about" activeClassName="active-link">За Нас</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/contact" activeClassName="active-link">Контакти</NavLink>
