@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Contact from "./Contact";
 import About from "./About";
 import Home from "./Home";
-import Login from "./auth/Login";
+import Login from "./auth/LoginForm";
 import AirConditioning from "./AirContitioning";
 import Heating from "./Heating";
 import Design from "./Design";

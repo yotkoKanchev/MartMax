@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-6 col-xl-2" data-aos="fade-down">
-                        <h1 className="mb-0"><a href="index.html" className="text-white h2 mb-0">MAXMART</a></h1>
+                        <h1 className="mb-0"><NavLink className="text-white h2 mb-0" to="/">MAXMART</NavLink></h1>
                     </div>
                     <div className="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
                         <nav className="site-navigation position-relative text-right text-lg-center" role="navigation">

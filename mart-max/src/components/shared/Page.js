@@ -3,10 +3,9 @@ import React, { Component } from 'react'
 export default class Page extends Component {
     render() {
         return (
-            <div className="site-section" data-aos="fade">
+            <div className="site-section">
                 <div className="container-fluid">
                     <div className="row justify-content-center">
-
                         <div className="col-md-7">
                             <div className="row mb-5">
                                 <div className="col-12 ">
@@ -14,7 +13,6 @@ export default class Page extends Component {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div className="row mb-5">

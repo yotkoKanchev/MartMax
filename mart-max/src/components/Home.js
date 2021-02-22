@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 const Home = () =>
 (
     <div className="App">
-        <div className="container-fluid" data-aos="fade" data-aos-delay="500">
+        <div className="container-fluid">
             <div className="row items-center">
 
                 <div className="col-lg-5">
@@ -26,7 +26,7 @@ const Home = () =>
                 </div>
 
                 <div className="col-lg-5">
-                    <NavLink to="/air-conditioning" activeClassName="active-link">
+                    <NavLink to="/ac" activeClassName="active-link">
                         <div className="image-wrap-2">
                             <div className="image-info">
                                 <h2 className="mb-3">Климатизация</h2>
@@ -50,7 +50,7 @@ const Home = () =>
                 </div>
 
                 <div className="col-lg-5">
-                    <NavLink to="/project-work" activeClassName="active-link"><div className="image-wrap-2">
+                    <NavLink to="/design" activeClassName="active-link"><div className="image-wrap-2">
                         <div className="image-info">
                             <h2 className="mb-3">Проектиране</h2>
                         </div>

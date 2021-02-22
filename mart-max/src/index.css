@@ -1,14 +1,17 @@
 @import "fonts/icomoon/style.css";
 @import "styles/bootstrap.min.css";
-@import "styles/magnific-popup.css";
-@import "styles/jquery-ui.css";
-@import "styles/owl.carousel.min.css";
-@import "styles/owl.theme.default.min.css";
-@import "styles/lightgallery.min.css";
-@import "styles/bootstrap-datepicker.css";
-@import "fonts/flaticon//font/flaticon.css";
-@import "styles/swiper.css";
+/* @import "styles/magnific-popup.css"; */
+/* @import "styles/jquery-ui.css"; */
+/* @import "styles/owl.carousel.min.css"; */
+/* @import "styles/owl.theme.default.min.css"; */
+/* @import "styles/lightgallery.min.css"; */
+/* @import "styles/bootstrap-datepicker.css"; */
+/* @import "fonts/flaticon//font/flaticon.css"; */
+/* @import "styles/swiper.css"; */
 @import "styles/style.css";
 @import "styles/animations.css";
 
+.large-font{
+    font-size: 1.5em;
+}
 

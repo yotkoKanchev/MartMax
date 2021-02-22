@@ -9,6 +9,7 @@ const Contacts = () => {
 
     useEffect(() => {
         firebaseDb.child('contacts').on('value', snapshot => {
+            console.log(snapshot)
             if (snapshot.val() != null)
                 setContactObjects({
                     ...snapshot.val()
