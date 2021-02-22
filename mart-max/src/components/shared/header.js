@@ -19,6 +19,7 @@ const Header = () => {
                                     <a className="active-link">Услуги</a>
                                     <ul className="dropdown">
                                         <li><NavLink to="/heating" activeClassName="active-link">Отопление</NavLink></li>
+                                        {/* <li><a href='/heating'>Отопление</a></li> */}
                                         <li><NavLink to="/ac" activeClassName="active-link">Климатизация</NavLink></li>
                                         <li><NavLink to="/ventilation" activeClassName="active-link">Вентилация</NavLink></li>
                                         <li><NavLink to="/design" activeClassName="active-link">Проектиране</NavLink></li>

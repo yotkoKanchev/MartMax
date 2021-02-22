@@ -25,9 +25,14 @@ function login(data) {
 }
 
 function logout() {
-    firebase.auth().signOut();
-    token = '';
-    localStorage.clear();
+    firebase.auth().signOut().then(() => {
+        token = '';
+        localStorage.clear();
+        // redirect to home
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
 }
 
 function isAuthenticated() {
