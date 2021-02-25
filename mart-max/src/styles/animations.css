@@ -1,4 +1,4 @@
-.site-main {
+.site-main, .footer {
   opacity: 0;
   transform: translateY(-3em);
   transition: opacity 0.4s ease-in, transform 0.3s ease-in-out;
@@ -6,6 +6,11 @@
 }
 
 body.loaded .site-main {
+  opacity: 1;
+  transform: translateY(0);
+ }
+
+ body.loaded .footer {
   opacity: 1;
   transform: translateY(0);
  }
@@ -18,7 +23,7 @@ body.loaded .site-main {
   transition-delay: 0.4s; 
 }
 
-body.loaded .site-navbar {
+body.loaded .site-navbar{
   opacity: 1;
   transform: translateY(0); 
 }

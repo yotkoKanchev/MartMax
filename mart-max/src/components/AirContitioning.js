@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
-import ac from './../images/ac.jpg'
-// TODO Image url and description comes from Firebase !
+import fireDb from './../firebase';
 
-const description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias repudiandae dicta doloremque voluptates soluta repellendus, unde laborum quo nam, ullam facere voluptatem similique.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus vel tenetur explicabo necessitatibus, ad soluta consectetur illo qui voluptatem. Quis soluta maiores eum. Iste modi voluptatum in repudiandae fugiat suscipit dolorum harum, porro voluptate quis? Alias repudiandae dicta doloremque voluptates soluta repellendus, unde laborum quo nam, ullam facere voluptatem similique.';
+const AirConditioning = () => {
 
-const AirConditioning = () =>
-(
-    <Page title="Килиматизация" image={ac} description={description}></Page>
-)
+    var [acInfo, setAcInfo] = useState({})
 
-export default AirConditioning
+    useEffect(() => {
+        fireDb.child('ac').on('value', snapshot => {
+            console.log(snapshot)
+            if (snapshot.val() != null)
+                setAcInfo({
+                    ...snapshot.val()
+                })
+            else
+                setAcInfo({})
+        })
+    }, [])
+
+    return (
+        < Page title="Килиматизация" image={acInfo.img} description={acInfo.text} />
+    )
+}
+
+export default AirConditioning;

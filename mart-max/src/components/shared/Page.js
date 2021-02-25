@@ -16,10 +16,10 @@ export default class Page extends Component {
                     </div>
 
                     <div className="row mb-5">
-                        <div className="col-md-7">
+                        <div className="col-md-7 d-flex justify-content-center">
                             <img src={this.props.image} alt={this.props.title} className="img-fluid"></img>
                         </div>
-                        <div className="col-md-4 ml-auto mt-2">
+                        <div className="d-flex align-items-center col-md-4 ml-auto mt-2">
                             <p>{this.props.description}</p>
                         </div>
                     </div>

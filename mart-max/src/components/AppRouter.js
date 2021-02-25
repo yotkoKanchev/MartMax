@@ -11,17 +11,19 @@ import Ventilation from "./Ventilation";
 
 const AppRouter = () => (
     <div className="site-main">
-        <Switch>
-            <Route path="/about"><About /></Route>
-            <Route path="/contact"><Contact /></Route>
-            <Route path="/login"><Login /></Route>
-            <Route path="/ac"><AirConditioning /></Route>
-            <Route path="/heating"><Heating /></Route>
-            <Route path="/design"><Design /></Route>
-            <Route path="/ventilation"><Ventilation /></Route>
-            <Route ><Home /></Route>
-        </Switch>
-    </div>
+        <div className="App">
+            <Switch>
+                <Route path="/about"><About /></Route>
+                <Route path="/contact"><Contact /></Route>
+                <Route path="/login"><Login /></Route>
+                <Route path="/ac"><AirConditioning /></Route>
+                <Route path="/heating"><Heating /></Route>
+                <Route path="/design"><Design /></Route>
+                <Route path="/ventilation"><Ventilation /></Route>
+                <Route ><Home /></Route>
+            </Switch>
+        </div>
+    </div >
 )
 
 export default AppRouter

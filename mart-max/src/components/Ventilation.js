@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
-import ventilation from './../images/ventilation.png'
-// TODO Image url and description comes from Firebase !
 
-const description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias repudiandae dicta doloremque voluptates soluta repellendus, unde laborum quo nam, ullam facere voluptatem similique.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus vel tenetur explicabo necessitatibus, ad soluta consectetur illo qui voluptatem. Quis soluta maiores eum. Iste modi voluptatum in repudiandae fugiat suscipit dolorum harum, porro voluptate quis? Alias repudiandae dicta doloremque voluptates soluta repellendus, unde laborum quo nam, ullam facere voluptatem similique.';
+import fireDb from './../firebase';
 
-const Ventilation = () =>
-(
-    <Page title="Вентилация" image={ventilation} description={description}></Page>
-)
+// Find a way to resize images with css
 
-export default Ventilation
+const Ventilation = () => {
+
+    var [ventilationInfo, setVentilationInfo] = useState({})
+
+    useEffect(() => {
+        fireDb.child('heating').on('value', snapshot => {
+            console.log(snapshot)
+            if (snapshot.val() != null)
+                setVentilationInfo({
+                    ...snapshot.val()
+                })
+            else
+                setVentilationInfo({})
+        })
+    }, [])
+
+    return (
+        < Page title="Вентилация" image={ventilationInfo.img} description={ventilationInfo.text} />
+    )
+}
+
+export default Ventilation;

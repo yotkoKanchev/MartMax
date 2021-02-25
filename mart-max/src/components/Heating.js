@@ -3,7 +3,6 @@ import Page from './shared/Page'
 
 import fireDb from './../firebase';
 
-// TODO Image url and description comes from Firebase ! DONE
 // Find a way to resize images with css
 
 const Heating = () => {
