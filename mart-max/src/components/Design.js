@@ -10,14 +10,10 @@ const Design = () => {
     var [designInfo, setDesignInfo] = useState({})
 
     useEffect(() => {
-        fireDb.child('heating').on('value', snapshot => {
-            console.log(snapshot)
-            if (snapshot.val() != null)
-                setDesignInfo({
-                    ...snapshot.val()
-                })
-            else
-                setDesignInfo({})
+        fireDb.child('menus').child('design').on('value', snapshot => {
+            setDesignInfo({
+                ...snapshot.val()
+            })
         })
     }, [])
 

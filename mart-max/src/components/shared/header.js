@@ -18,18 +18,21 @@ const Header = () => {
                                 <li className="has-children">
                                     <a className="active-link">Услуги</a>
                                     <ul className="dropdown">
-                                        <li><NavLink to="/heating" activeClassName="active-link">Отопление</NavLink></li>
-                                        {/* <li><a href='/heating'>Отопление</a></li> */}
-                                        <li><NavLink to="/ac" activeClassName="active-link">Климатизация</NavLink></li>
-                                        <li><NavLink to="/ventilation" activeClassName="active-link">Вентилация</NavLink></li>
-                                        <li><NavLink to="/design" activeClassName="active-link">Проектиране</NavLink></li>
+                                        <li><NavLink to="/heating" className="active-link">Отопление</NavLink></li>
+                                        <li><NavLink to="/ac" className="active-link">Климатизация</NavLink></li>
+                                        <li><NavLink to="/ventilation" className="active-link">Вентилация</NavLink></li>
+                                        <li><NavLink to="/design" className="active-link">Проектиране</NavLink></li>
+                                        {/* <li><a href='/heating'>Отопление</a></li>
+                                        <li><a href='/ac'>Климатизация</a></li>
+                                        <li><a href='/ventilation'>Вентилация</a></li>
+                                        <li><a href='/design'>Проектиране</a></li> */}
                                     </ul>
                                 </li>
                                 <li>
-                                    <NavLink to="/about" activeClassName="active-link">За Нас</NavLink>
+                                    <NavLink to="/about" className="active-link">За Нас</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/contact" activeClassName="active-link">Контакти</NavLink>
+                                    <NavLink to="/contact" className="active-link">Контакти</NavLink>
                                 </li>
                             </ul>
                         </nav>

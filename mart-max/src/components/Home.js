@@ -1,67 +1,45 @@
-import React from 'react'
-import heating from './../images/heating.jpg'
-import air_conditioning from './../images/ac.jpg'
-import design from './../images/design.jpg'
-import ventilation from './../images/ventilation.png'
+import React, { useState, useEffect } from 'react'
+
 import { NavLink } from "react-router-dom";
+import fireDb from './../firebase';
 
-// TODO Images urls comes from Firebase !
+const Home = () => {
 
+    var [menus, setMenusInfo] = useState({})
 
-const Home = () =>
-(
+    useEffect(() => {
+        fireDb.child('menus').on('value', snapshot => {
+            setMenusInfo({
+                ...snapshot.val()
+            })
+        })
+    }, [])
 
-    <div className="container-fluid">
-        <div className="row items-center">
+    return (
 
-            <div className="col-lg-5">
-                <NavLink to="/heating" activeClassName="active-link">
-                    <div className="image-wrap-2">
-                        <div className="image-info">
-                            <h2 className="mb-3">Отопление</h2>
-                        </div>
-                        <img src={heating} alt="Image" className="img-fluid" />
-                    </div>
-                </NavLink>
+        <div className="container-fluid">
+            <div className="row items-center">
+                {
+                    Object.keys(menus).map((key) => {
+                        let menu = menus[key];
+                        return (
+                            <div key={key} className="col-lg-5">
+                                <NavLink to={key} className="active-link">
+                                    <div className="image-wrap-2">
+                                        <div className="image-info">
+                                            <h2 className="mb-3">{menu.title}</h2>
+                                        </div>
+                                        <img src={menu.img} alt={menu.title} className="img-fluid img-sized" />
+                                    </div>
+                                </NavLink>
+                            </div>
+                        )
+                    })
+                }
             </div>
-
-            <div className="col-lg-5">
-                <NavLink to="/ac" activeClassName="active-link">
-                    <div className="image-wrap-2">
-                        <div className="image-info">
-                            <h2 className="mb-3">Климатизация</h2>
-                        </div>
-                        <img src={air_conditioning} alt="Image" className="img-fluid" />
-                    </div>
-                </NavLink>
-
-            </div>
-
-            <div className="col-lg-5">
-                <NavLink to="/ventilation" activeClassName="active-link">
-                    <div className="image-wrap-2">
-                        <div className="image-info">
-                            <h2 className="mb-3">Вентилация</h2>
-                        </div>
-                        <img src={ventilation} alt="Image" className="img-fluid" />
-                    </div>
-                </NavLink>
-
-            </div>
-
-            <div className="col-lg-5">
-                <NavLink to="/design" activeClassName="active-link"><div className="image-wrap-2">
-                    <div className="image-info">
-                        <h2 className="mb-3">Проектиране</h2>
-                    </div>
-                    <img src={design} alt="Image" className="img-fluid" />
-                </div>
-                </NavLink>
-            </div>
-
         </div>
-    </div>
-)
+    )
+}
 
 
 export default Home

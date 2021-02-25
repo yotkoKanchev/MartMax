@@ -4,17 +4,20 @@ import fireDb from './../firebase';
 
 const Contact = () => {
     var [contactsInfo, setContactsInfo] = useState({})
+    var [architects, setArchitects] = useState({})
 
     useEffect(() => {
         fireDb.child('contacts').on('value', snapshot => {
-            console.log(snapshot)
-            if (snapshot.val() != null)
-                setContactsInfo({
-                    ...snapshot.val()
-                })
-            else
-                setContactsInfo({})
-        })
+            setContactsInfo({
+                ...snapshot.val()
+            })
+        });
+
+        fireDb.child('architects').on('value', snapshot => {
+            setArchitects({
+                ...snapshot.val()
+            })
+        });
     }, [])
 
     return (
@@ -33,10 +36,19 @@ const Contact = () => {
                         <div className="mb-5 mt-5">
                             <p className="mb-0 font-weight-bold text-white">Адрес</p>
                             <p className="mb-2 large-font">{contactsInfo.city}</p>
-                            <p className="mb-2 large-font">{contactsInfo.address}</p>
-                            <p className="mb-0 font-weight-bold text-white">Телефон</p>
-                            <p className="mb-4"><a href="+359 899874204">+359 899874204</a></p>
-                            <p className="mb-0 font-weight-bold text-white">Имейл</p>
+                            <p className="mb-4 large-font">{contactsInfo.address}</p>
+                            <p className="mb-0 font-weight-bold text-white">Телефони</p>
+                            {
+                                Object.keys(architects).map((key) => {
+                                    let architect = architects[key];
+                                    let nameArgs = architect.name.split(' ');
+                                    let name = 'инж. ' + nameArgs[0][0] + '. ' + nameArgs[1];
+                                    return (
+                                        <p key={name} className="mb-2"><span>{name} - </span><a href="+359 899874204">+359 899874204</a></p>
+                                    )
+                                })
+                            }
+                            <p className="mb-0 mt-4 font-weight-bold text-white">Имейл</p>
                             <p className="mb-0"><a href="mailto: {contactsInfo.email}">{contactsInfo.email}</a></p>
                         </div>
                     </div>

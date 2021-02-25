@@ -10,14 +10,10 @@ const Ventilation = () => {
     var [ventilationInfo, setVentilationInfo] = useState({})
 
     useEffect(() => {
-        fireDb.child('heating').on('value', snapshot => {
-            console.log(snapshot)
-            if (snapshot.val() != null)
-                setVentilationInfo({
-                    ...snapshot.val()
-                })
-            else
-                setVentilationInfo({})
+        fireDb.child('menus').child('ventilation').on('value', snapshot => {
+            setVentilationInfo({
+                ...snapshot.val()
+            })
         })
     }, [])
 

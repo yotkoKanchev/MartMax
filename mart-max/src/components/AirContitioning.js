@@ -7,14 +7,10 @@ const AirConditioning = () => {
     var [acInfo, setAcInfo] = useState({})
 
     useEffect(() => {
-        fireDb.child('ac').on('value', snapshot => {
-            console.log(snapshot)
-            if (snapshot.val() != null)
-                setAcInfo({
-                    ...snapshot.val()
-                })
-            else
-                setAcInfo({})
+        fireDb.child('menus').child('ac').on('value', snapshot => {
+            setAcInfo({
+                ...snapshot.val()
+            })
         })
     }, [])
 

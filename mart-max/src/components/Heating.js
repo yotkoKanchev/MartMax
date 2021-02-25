@@ -10,19 +10,15 @@ const Heating = () => {
     var [heatingInfo, setHeatingInfo] = useState({})
 
     useEffect(() => {
-        fireDb.child('heating').on('value', snapshot => {
-            console.log(snapshot)
-            if (snapshot.val() != null)
-                setHeatingInfo({
-                    ...snapshot.val()
-                })
-            else
-                setHeatingInfo({})
+        fireDb.child('menus').child('heating').on('value', snapshot => {
+            setHeatingInfo({
+                ...snapshot.val()
+            })
         })
     }, [])
 
     return (
-        < Page title="Отопление" image={heatingInfo.img} description={heatingInfo.text} />
+        < Page title={heatingInfo.title} image={heatingInfo.img} description={heatingInfo.text} />
     )
 }
 
