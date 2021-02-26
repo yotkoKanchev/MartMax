@@ -9,6 +9,8 @@ import Heating from "./Heating";
 import Design from "./Design";
 import Ventilation from "./Ventilation";
 import Login from "./auth/LoginForm";
+import { AuthProvider } from "./auth/Auth";
+import PrivateRoute from "./PrivateRoute";
 
 const AppRouter = () => {
     let url = window.location.href;
@@ -17,20 +19,23 @@ const AppRouter = () => {
     }
 
     return (
-        <div className="site-main">
-            <div className="App">
-                <Switch>
-                    <Route path="/about"><About /></Route>
-                    <Route path="/contact"><Contact /></Route>
-                    <Route path="/ac"><AirConditioning /></Route>
-                    <Route path="/heating"><Heating /></Route>
-                    <Route path="/design"><Design /></Route>
-                    <Route path="/ventilation"><Ventilation /></Route>
-                    <Route path="/login"><Login /></Route>
-                    <Route ><Home /></Route>
-                </Switch>
-            </div>
-        </div >
+        <AuthProvider>
+            <div className="site-main">
+                <div className="App">
+                    <Switch>
+                        <Route exact path="/about"><About /></Route>
+                        <Route exact path="/contact"><Contact /></Route>
+                        <Route exact path="/ac"><AirConditioning /></Route>
+                        <Route exact path="/heating"><Heating /></Route>
+                        {/* <Route exact path="/design"><Design /></Route> */}
+                        <Route exact path="/ventilation"><Ventilation /></Route>
+                        <Route exact path="/login"><Login /></Route>
+                        <Route ><Home /></Route>
+                        {/* <PrivateRoute exact path='/'><Home /></PrivateRoute> */}
+                    </Switch>
+                </div>
+            </div >
+        </AuthProvider>
     )
 }
 
