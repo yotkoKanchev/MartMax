@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import fireDb from './../firebase';
+import { fireDb } from './../firebase';
 
 const Contact = () => {
     var [contactsInfo, setContactsInfo] = useState({})

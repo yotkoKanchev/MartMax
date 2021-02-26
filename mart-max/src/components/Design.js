@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import fireDb from './../firebase';
-
-// Find a way to resize images with css
+import { fireDb } from './../firebase';
 
 const Design = () => {
 

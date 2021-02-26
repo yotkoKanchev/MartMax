@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
-import fireDb from './../firebase';
+
+import { fireDb } from './../firebase';
 
 const AirConditioning = () => {
 

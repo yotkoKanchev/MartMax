@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import fireDb from './../firebase';
 import Page from './shared/Page'
 
-// TODO Images urls,personal info and description comes from Firebase !
+import { fireDb } from './../firebase';
 
 const About = () => {
     var [aboutInfo, setAboutInfo] = useState({})

@@ -5,9 +5,10 @@ import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 import AppRouter from './components/AppRouter';
 import Contacts from './demo/Contacts';
-import { CSSTransition } from 'react-transition-group';
 
 export default function App() {
+
+
   return (
     <div >
       <Header />

@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import Page from './shared/Page'
 
-import fireDb from './../firebase';
-
-// Find a way to resize images with css
+import { fireDb } from './../firebase';
 
 const Heating = () => {
-
     var [heatingInfo, setHeatingInfo] = useState({})
 
     useEffect(() => {
@@ -23,3 +20,18 @@ const Heating = () => {
 }
 
 export default Heating;
+
+
+
+
+// export default class Heating extends Component {
+//     componentDidMount() {
+//         document.body.style.backgroundColor = "green"
+//     }
+//     componentWillUnmount() {
+//         document.body.style.backgroundColor = "black"
+//     }
+//     render() {
+//         return (<h1>Test</h1>)
+//     }
+// }

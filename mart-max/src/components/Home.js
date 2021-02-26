@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
 import { NavLink } from "react-router-dom";
-import fireDb from './../firebase';
+
+import { fireDb } from './../firebase';
 
 const Home = () => {
 

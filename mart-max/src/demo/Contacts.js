@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+
 import ContactForm from "./ContactForm"
-import firebaseDb from '../firebase'
+import { fireDb } from './../firebase';
 
 const Contacts = () => {
 
@@ -8,7 +9,7 @@ const Contacts = () => {
     var [currentId, setCurrentId] = useState('')
 
     useEffect(() => {
-        firebaseDb.child('contacts').on('value', snapshot => {
+        fireDb.child('contacts').on('value', snapshot => {
             console.log(snapshot)
             if (snapshot.val() != null)
                 setContactObjects({
@@ -21,7 +22,7 @@ const Contacts = () => {
 
     const addOrEdit = obj => {
         if (currentId == '')
-            firebaseDb.child('contacts').push( // ADD firebase write and edit roles for authenticated user "write: 'auth' != null"
+            fireDb.child('contacts').push( // ADD firebase write and edit roles for authenticated user "write: 'auth' != null"
                 obj,
                 err => {
                     if (err)
@@ -31,7 +32,7 @@ const Contacts = () => {
                 }
             )
         else
-            firebaseDb.child(`contacts/${currentId}`).set(
+            fireDb.child(`contacts/${currentId}`).set(
                 obj,
                 err => {
                     if (err)
@@ -44,7 +45,7 @@ const Contacts = () => {
 
     const onDelete = key => {
         if (window.confirm('Are you sure to delete this record?')) {
-            firebaseDb.child(`contacts/${key}`).remove(
+            fireDb.child(`contacts/${key}`).remove(
                 err => {
                     if (err)
                         console.log(err);
