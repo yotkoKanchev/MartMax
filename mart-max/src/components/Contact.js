@@ -4,7 +4,7 @@ import { fireDb } from './../firebase';
 
 const Contact = () => {
     var [contactsInfo, setContactsInfo] = useState({})
-    var [architects, setArchitects] = useState({})
+    var [employees, setEmployees] = useState({})
 
     useEffect(() => {
         fireDb.child('contacts').on('value', snapshot => {
@@ -13,8 +13,8 @@ const Contact = () => {
             })
         });
 
-        fireDb.child('architects').on('value', snapshot => {
-            setArchitects({
+        fireDb.child('employees').on('value', snapshot => {
+            setEmployees({
                 ...snapshot.val()
             })
         });
@@ -39,9 +39,9 @@ const Contact = () => {
                             <p className="mb-4 large-font">{contactsInfo.address}</p>
                             <p className="mb-0 font-weight-bold text-white">Телефони</p>
                             {
-                                Object.keys(architects).map((key) => {
-                                    let architect = architects[key];
-                                    let nameArgs = architect.name.split(' ');
+                                Object.keys(employees).map((key) => {
+                                    let employee = employees[key];
+                                    let nameArgs = employee.name.split(' ');
                                     let name = 'инж. ' + nameArgs[0][0] + '. ' + nameArgs[1];
                                     return (
                                         <p key={name} className="mb-2"><span>{name} - </span><a href="+359 899874204">+359 899874204</a></p>

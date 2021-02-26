@@ -41,7 +41,7 @@ const Header = () => {
                                 </li>
                                 {
                                     currentUser ?
-                                        <li><a href="" className="active-link" onClick={() => appAuth.signOut()}>Администрация</a></li>
+                                        <li><NavLink exact to="/dashboard" className="active-link">Администрация</NavLink></li>
                                         : null
                                 }
                                 {
