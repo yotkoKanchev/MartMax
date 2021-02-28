@@ -16,28 +16,34 @@ const Header = () => {
                     </div>
                     <div className="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
                         <nav className="site-navigation position-relative text-right text-lg-center">
+
                             <ul className="site-menu js-clone-nav mx-auto d-none d-lg-block">
                                 <li className="active">
-                                    <NavLink exact to="/">Начало</NavLink>
+                                    {/* <NavLink exact to="/">Начало</NavLink> */}
+                                    <a href='/'>Начало</a>
                                 </li>
                                 <li className="has-children">
                                     <a className="active-link">Услуги</a>
                                     <ul className="dropdown">
-                                        <li><NavLink exact to="/heating" className="active-link">Отопление</NavLink></li>
+                                        {/* <li><NavLink exact to="/heating" className="active-link">Отопление</NavLink></li>
                                         <li><NavLink exact to="/ac" className="active-link">Климатизация</NavLink></li>
                                         <li><NavLink exact to="/ventilation" className="active-link">Вентилация</NavLink></li>
-                                        <li><NavLink exact to="/design" className="active-link">Проектиране</NavLink></li>
-                                        {/* <li><a href='/heating'>Отопление</a></li>
+                                        <li><NavLink exact to="/design" className="active-link">Проектиране</NavLink></li> */}
+                                        <li><a href='/heating'>Отопление</a></li>
                                         <li><a href='/ac'>Климатизация</a></li>
                                         <li><a href='/ventilation'>Вентилация</a></li>
-                                        <li><a href='/design'>Проектиране</a></li> */}
+                                        <li><a href='/design'>Проектиране</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <NavLink exact to="/about" className='active'>За Нас</NavLink>
+                                    {/* <NavLink exact to="/about" className='active'>За Нас</NavLink> */}
+                                    <a className="active-link" href='/about'>За Нас</a>
+
                                 </li>
                                 <li>
-                                    <NavLink exact to="/contact" className="active-link">Контакти</NavLink>
+                                    {/* <NavLink exact to="/contact" className="active-link">Контакти</NavLink> */}
+                                    <a className="active-link" href='/contact'>Контакти</a>
+
                                 </li>
                                 {
                                     currentUser ?

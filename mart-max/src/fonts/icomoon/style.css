@@ -9,3 +9,8 @@
 .icon-keyboard_arrow_down:before {
   content: "\e313";
 }
+
+input::selection {
+  color: black;
+  background: white;
+}

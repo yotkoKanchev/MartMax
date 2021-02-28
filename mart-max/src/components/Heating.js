@@ -16,18 +16,3 @@ const Heating = () => {
 }
 
 export default Heating;
-
-
-
-
-// export default class Heating extends Component {
-//     componentDidMount() {
-//         document.body.style.backgroundColor = "green"
-//     }
-//     componentWillUnmount() {
-//         document.body.style.backgroundColor = "black"
-//     }
-//     render() {
-//         return (<h1>Test</h1>)
-//     }
-// }

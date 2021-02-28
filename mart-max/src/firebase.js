@@ -11,7 +11,6 @@ var firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-
 let db = firebase.initializeApp(firebaseConfig);
 export const fireDb = db.database().ref();
 export const appAuth = firebase.auth();

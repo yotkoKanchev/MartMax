@@ -10,7 +10,6 @@ import Contacts from './demo/Contacts';
 
 export default function App() {
 
-
   return (
     <AuthProvider >
       <Header />

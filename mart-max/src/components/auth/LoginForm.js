@@ -39,7 +39,7 @@ const LoginForm = ({ history }) => {
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-lg-8 mb-5">
-                        <form autoComplete="off" onSubmit={handleLogin}>
+                        <form onSubmit={handleLogin}>
                             <div className="row form-group">
                                 <div className="col-md-12">
                                     <label className="text-white" htmlFor="subject">Потребител</label>

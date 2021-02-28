@@ -14,10 +14,10 @@ import { AuthProvider } from "./auth/Auth";
 import PrivateRoute from "./PrivateRoute";
 
 const AppRouter = () => {
-    let url = window.location.href;
-    if (url.includes('heating')) {
-        document.body.style.backgroundColor = "green"
-    }
+    // let url = window.location.href;
+    // if (url.includes('heating')) {
+    //     document.body.style.backgroundColor = "green"
+    // }
 
     return (
         <AuthProvider>
