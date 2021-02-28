@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const Contact = () => {
-    var [contactsInfo, setContactsInfo] = useState({})
+    var [contacts, setContacts] = useState({})
     var [employees, setEmployees] = useState({})
 
     useEffect(() => {
-        fireDb.child('contacts').on('value', snapshot => {
-            setContactsInfo({
-                ...snapshot.val()
-            })
-        });
-
-        fireDb.child('employees').on('value', snapshot => {
-            setEmployees({
-                ...snapshot.val()
-            })
-        });
+        readFromDb('contacts', setContacts, null);
+        readFromDb('employees', setEmployees, null);
     }, [])
 
     return (
@@ -35,8 +26,8 @@ const Contact = () => {
                     <div className="col-lg-10 ml-auto">
                         <div className="mb-5 mt-5">
                             <p className="mb-0 font-weight-bold text-white">Адрес</p>
-                            <p className="mb-2 large-font">{contactsInfo.city}</p>
-                            <p className="mb-4 large-font">{contactsInfo.address}</p>
+                            <p className="mb-2 large-font">{contacts.city}</p>
+                            <p className="mb-4 large-font">{contacts.address}</p>
                             <p className="mb-0 font-weight-bold text-white">Телефони</p>
                             {
                                 Object.keys(employees).map((key) => {
@@ -49,7 +40,7 @@ const Contact = () => {
                                 })
                             }
                             <p className="mb-0 mt-4 font-weight-bold text-white">Имейл</p>
-                            <p className="mb-0"><a href="mailto: {contactsInfo.email}">{contactsInfo.email}</a></p>
+                            <p className="mb-0"><a href="mailto: {contactsInfo.email}">{contacts.email}</a></p>
                         </div>
                     </div>
                 </div>

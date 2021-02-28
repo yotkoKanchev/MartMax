@@ -1,17 +1,13 @@
 import React, { useState, useEffect, Component } from 'react'
 import Page from './shared/Page'
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const Heating = () => {
-    var [heatingInfo, setHeatingInfo] = useState({})
+    var [heatingInfo, setHeating] = useState({})
 
     useEffect(() => {
-        fireDb.child('menus').child('heating').on('value', snapshot => {
-            setHeatingInfo({
-                ...snapshot.val()
-            })
-        })
+        readFromDb('menus', setHeating, 'heating');
     }, [])
 
     return (

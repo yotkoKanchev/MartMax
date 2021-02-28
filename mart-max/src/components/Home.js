@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const Home = () => {
 
-    var [menus, setMenusInfo] = useState({})
+    var [menus, setMenus] = useState({})
 
     useEffect(() => {
-        fireDb.child('menus').on('value', snapshot => {
-            setMenusInfo({
-                ...snapshot.val()
-            })
-        })
+        readFromDb('menus', setMenus, null);
     }, [])
 
     return (

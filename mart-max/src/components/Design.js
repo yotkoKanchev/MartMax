@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const Design = () => {
 
-    var [designInfo, setDesignInfo] = useState({})
+    var [designInfo, setDesign] = useState({})
 
     useEffect(() => {
-        fireDb.child('menus').child('design').on('value', snapshot => {
-            setDesignInfo({
-                ...snapshot.val()
-            })
-        })
+        readFromDb('menus', setDesign, 'design');
     }, [])
 
     return (

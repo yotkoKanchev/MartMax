@@ -1,29 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const About = () => {
-    var [aboutInfo, setAboutInfo] = useState({})
+    var [about, setAbout] = useState({})
     var [employees, setEmployees] = useState({})
 
     useEffect(() => {
-        fireDb.child('about').on('value', snapshot => {
-            setAboutInfo({
-                ...snapshot.val()
-            })
-        });
-
-        fireDb.child('employees').on('value', snapshot => {
-            setEmployees({
-                ...snapshot.val()
-            })
-        });
+        readFromDb('about', setAbout, null);
+        readFromDb('employees', setEmployees, null);
     }, [])
 
     return (
         <div>
-            < Page title={aboutInfo.title} image={aboutInfo.img} description={aboutInfo.text} />
+            < Page title={about.title} image={about.img} description={about.text} />
             <div className="row pt-3 pb-5">
                 {
                     Object.keys(employees).map((key) => {

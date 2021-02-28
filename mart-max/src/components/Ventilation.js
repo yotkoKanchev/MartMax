@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
 import Page from './shared/Page'
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const Ventilation = () => {
-
-    var [ventilationInfo, setVentilationInfo] = useState({})
+    var [ventilation, setVentilation] = useState({})
 
     useEffect(() => {
-        fireDb.child('menus').child('ventilation').on('value', snapshot => {
-            setVentilationInfo({
-                ...snapshot.val()
-            })
-        })
+        readFromDb('menus', setVentilation, 'ventilation');
     }, [])
 
     return (
-        < Page title="Вентилация" image={ventilationInfo.img} description={ventilationInfo.text} />
+        < Page title="Вентилация" image={ventilation.img} description={ventilation.text} />
     )
 }
 

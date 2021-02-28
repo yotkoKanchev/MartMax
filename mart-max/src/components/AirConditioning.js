@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import { fireDb } from './../firebase';
+import { readFromDb } from "./../fetcher";
 
 const AirConditioning = () => {
 
-    var [acInfo, setAcInfo] = useState({})
+    var [ac, setAc] = useState({})
 
     useEffect(() => {
-        fireDb.child('menus').child('ac').on('value', snapshot => {
-            setAcInfo({
-                ...snapshot.val()
-            })
-        })
+        readFromDb('menus', setAc, 'ac');
     }, [])
 
     return (
-        < Page title="Килиматизация" image={acInfo.img} description={acInfo.text} />
+        < Page title="Килиматизация" image={ac.img} description={ac.text} />
     )
 }
 
