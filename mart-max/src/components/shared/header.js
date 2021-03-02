@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from "./../auth/Auth.js";
 import { NavLink } from "react-router-dom";
 
@@ -6,18 +6,24 @@ import { appAuth } from "./../../firebase";
 const Header = () => {
 
     const { currentUser } = useContext(AuthContext);
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+    const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
     return (
         <header className="site-navbar py-3">
             <div className="container-fluid">
                 <div className="row align-items-center">
-                    <div className="col-6 col-xl-3">
-                        <h1 className="mb-0"><a className="text-white h2 mb-0" href="/">{document.title.toUpperCase()}</a></h1>
-                    </div>
                     <div className="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
-                        <nav className="site-navigation position-relative text-right text-lg-center">
+                        <nav className="navbar navbar-expand-lg site-navigation position-relative text-right text-lg-center">
 
-                            <ul className="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                            <h1 className="mb-0"><a className="text-white h2 mb-0" href="/">{document.title.toUpperCase()}</a></h1>
+
+                            <button className="custom-toggler navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+
+                            <ul className={`${isNavCollapsed ? 'collapse site-menu js-clone-nav mx-auto d-none d-lg-block' : ''} navbar-collapse site-menu js-clone-nav mx-auto d-none d-lg-block justify-content-center`} id="navbarsExample09">
                                 <li className="active">
                                     {/* <NavLink exact to="/">Начало</NavLink> */}
                                     <a href='/'>Начало</a>
@@ -56,7 +62,6 @@ const Header = () => {
                                         : null
                                 }
                             </ul>
-
                         </nav>
                     </div>
                 </div>

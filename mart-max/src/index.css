@@ -17,21 +17,4 @@ img .img-sized {
   height: 874px;
 }
 
-@media (max-width: 500px) {
-  nav > ul > li > a {
-    font-size: 0.60em !important;
-  }
-  .site-navbar .site-navigation .site-menu > li > a {
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 400px) {
-  nav > ul > li > a {
-    font-size: 0.60em !important;
-  }
-  .site-navbar .site-navigation .site-menu > li > a {
-    padding-left: 0;
-  }
-}
 

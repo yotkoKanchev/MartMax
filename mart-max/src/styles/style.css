@@ -1,14 +1,18 @@
 /* Base */
-    body {
-      max-width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-    }
+body {
+  max-width: 960px;
+margin-right: auto;
+margin-left: auto;
+}
+.items-center{
+  justify-content: center;
+}
 
-    .items-center{
-      justify-content: center;
-    }
-
+@media (max-width: 992px) {
+  .items-center{
+  display: grid;
+}
+} 
 
     /* ORIGINAL CSS*/
 body {
