@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 
-import { readFromDb } from "./../fetcher";
+import { fetchData } from "./../firebase";
 
 const Home = () => {
 
     var [menus, setMenus] = useState({})
 
     useEffect(() => {
-        readFromDb('menus', setMenus, null);
+        fetchData('menus', setMenus, null);
     }, [])
 
     return (

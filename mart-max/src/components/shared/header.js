@@ -53,7 +53,7 @@ const Header = () => {
                                 </li>
                                 {
                                     currentUser ?
-                                        <li><NavLink exact to="/dashboard" className="active-link">Администрация</NavLink></li>
+                                        <li><NavLink exact to="/admin/dashboard" className="active-link">Администрация</NavLink></li>
                                         : null
                                 }
                                 {

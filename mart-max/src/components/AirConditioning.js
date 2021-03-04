@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import { readFromDb } from "./../fetcher";
+import { fetchData } from "./../firebase";
 
 const AirConditioning = () => {
 
     var [ac, setAc] = useState({})
 
     useEffect(() => {
-        readFromDb('menus', setAc, 'ac');
+        fetchData('menus', setAc, 'ac');
     }, [])
 
     return (

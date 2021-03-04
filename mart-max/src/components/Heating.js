@@ -1,13 +1,13 @@
 import React, { useState, useEffect, Component } from 'react'
 import Page from './shared/Page'
 
-import { readFromDb } from "./../fetcher";
+import { fetchData } from "./../firebase";
 
 const Heating = () => {
     var [heatingInfo, setHeating] = useState({})
 
     useEffect(() => {
-        readFromDb('menus', setHeating, 'heating');
+        fetchData('menus', setHeating, 'heating');
     }, [])
 
     return (

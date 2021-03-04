@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { readFromDb } from "./../fetcher";
+import { fetchData } from "./../firebase";
 
 const Contact = () => {
     var [contacts, setContacts] = useState({})
     var [employees, setEmployees] = useState({})
 
     useEffect(() => {
-        readFromDb('contacts', setContacts, null);
-        readFromDb('employees', setEmployees, null);
+        fetchData('contacts', setContacts, null);
+        fetchData('employees', setEmployees, null);
     }, [])
 
     return (
@@ -18,7 +18,7 @@ const Contact = () => {
                     <div className="col-md-12">
                         <div className="row mb-5">
                             <div className="col-12 ">
-                                <h2 className="site-section-heading text-center">Контакти</h2>
+                                <h2 className="site-section-heading text-center">{contacts.title}</h2>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const Contact = () => {
                                     let nameArgs = employee.name.split(' ');
                                     let name = 'инж. ' + nameArgs[0][0] + '. ' + nameArgs[1];
                                     return (
-                                        <p key={name} className="mb-2"><span>{name} - </span><a href="+359 899874204">+359 899874204</a></p>
+                                        <p key={name} className="mb-2"><span>{name} - </span><a href={employee.phone}>{employee.phone}</a></p>
                                     )
                                 })
                             }

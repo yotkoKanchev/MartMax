@@ -12,6 +12,48 @@ var firebaseConfig = {
 };
 
 let db = firebase.initializeApp(firebaseConfig);
+
 export const fireDb = db.database().ref();
+
+export const fetchData = (collection, setFunction, child) => {
+    let data = localStorage.getItem('firebase_data');
+
+    if (!data) {
+        console.log('Read from Db')
+        fireDb.on('value', snapshot => {
+            const values = snapshot.val();
+            localStorage.setItem('firebase_data', JSON.stringify(values));
+
+            if (!child) {
+                setFunction(values[collection])
+            } else {
+                setFunction(values[collection][child]);
+            }
+        })
+    } else {
+        console.log("Read from localStorage")
+        if (!child) {
+            setFunction(JSON.parse(data)[collection])
+        } else {
+            setFunction(JSON.parse(data)[collection][child]);
+        }
+    }
+}
+
+export const editData = (collection, child, obj) => {
+    let path = child ? collection + `/` + child : collection;
+
+    fireDb.child(path).set(
+        obj,
+        err => {
+            console.log(err);
+        }
+    )
+
+    localStorage.clear()
+    console.log(collection)
+    console.log(obj)
+}
+
 export const appAuth = firebase.auth();
 

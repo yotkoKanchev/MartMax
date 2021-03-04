@@ -17,4 +17,8 @@ img .img-sized {
   height: 874px;
 }
 
+.table td{
+  padding: 0.3em;
+}
+
 

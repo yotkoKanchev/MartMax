@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Page from './shared/Page'
 
-import { readFromDb } from "./../fetcher";
+import { fetchData } from "./../firebase";
 
 const About = () => {
     var [about, setAbout] = useState({})
     var [employees, setEmployees] = useState({})
 
     useEffect(() => {
-        readFromDb('about', setAbout, null);
-        readFromDb('employees', setEmployees, null);
+        fetchData('about', setAbout, null);
+        fetchData('employees', setEmployees, null);
     }, [])
 
     return (

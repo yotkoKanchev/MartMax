@@ -9,7 +9,8 @@ import Heating from "./Heating";
 import Design from "./Design";
 import Ventilation from "./Ventilation";
 import Login from "./auth/LoginForm";
-import Dashboard from "./Dashboard";
+import Dashboard from "./admin/Dashboard";
+import Edit_Ac from "./admin/Edit_Ac";
 import { AuthProvider } from "./auth/Auth";
 import PrivateRoute from "./PrivateRoute";
 
@@ -26,9 +27,9 @@ const AppRouter = () => {
                         <Route exact path="/design"><Design /></Route>
                         <Route exact path="/ventilation"><Ventilation /></Route>
                         <Route exact path="/login"><Login /></Route>
-                        <Route exact path="/dashboard"><Dashboard /></Route>
+                        <PrivateRoute exact path='/admin/dashboard'><Dashboard /></PrivateRoute>
+                        <PrivateRoute exact path='/admin/ac-edit'><Edit_Ac /></PrivateRoute>
                         <Route ><Home /></Route>
-                        {/* <PrivateRoute exact path='dashboard'><Dashboard /></PrivateRoute> */}
                     </Switch>
                 </div>
             </div >
