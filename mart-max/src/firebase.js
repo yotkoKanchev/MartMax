@@ -41,19 +41,27 @@ export const fetchData = (collection, setFunction, child) => {
 }
 
 export const editData = (collection, child, obj) => {
-    let path = child ? collection + `/` + child : collection;
-
-    fireDb.child(path).set(
-        obj,
-        err => {
-            console.log(err);
-        }
-    )
-
+    if (child) {
+        fireDb.child(collection).child(child).set(
+            obj,
+            err => {
+                console.log(err);
+            }
+        )
+    } else {
+        fireDb.child(collection).set(
+            obj,
+            err => {
+                console.log(err);
+            }
+        )
+    }
     localStorage.clear()
-    console.log(collection)
-    console.log(obj)
 }
 
 export const appAuth = firebase.auth();
 
+export const signOut = () => {
+    firebase.auth().signOut();
+    localStorage.clear();
+}

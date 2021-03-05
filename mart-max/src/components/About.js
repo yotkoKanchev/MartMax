@@ -14,7 +14,7 @@ const About = () => {
 
     return (
         <div>
-            < Page title={about.title} image={about.img} description={about.text} />
+            < Page collection="about" />
             <div className="row pt-3 pb-5">
                 {
                     Object.keys(employees).map((key) => {

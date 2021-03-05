@@ -10,7 +10,4 @@
   content: "\e313";
 }
 
-input::selection {
-  color: black;
-  background: white;
-}
+

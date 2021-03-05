@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { AuthContext } from "./../auth/Auth.js";
 import { NavLink } from "react-router-dom";
 
-import { appAuth } from "./../../firebase";
+import { signOut } from "./../../firebase";
 const Header = () => {
 
     const { currentUser } = useContext(AuthContext);
@@ -58,7 +58,7 @@ const Header = () => {
                                 }
                                 {
                                     currentUser ?
-                                        <li><a href="" className="active-link" onClick={() => appAuth.signOut()}>Отписване</a></li>
+                                        <li><a href="" className="active-link" onClick={() => signOut()}>Отписване</a></li>
                                         : null
                                 }
                             </ul>

@@ -11,8 +11,13 @@ margin-left: auto;
 @media (max-width: 992px) {
   .items-center{
   display: grid;
-}
+  }
 } 
+
+input::selection, textarea::selection {
+  color: black;
+  background: white;
+}
 
     /* ORIGINAL CSS*/
 body {
@@ -22,13 +27,13 @@ body {
   font-size: 1rem;
   background: #000; }
 
-::-moz-selection {
+/* ::-moz-selection {
   background: #000;
   color: #fff; }
 
 ::selection {
   background: #000;
-  color: #fff; }
+  color: #fff; } */
 
 a {
   -webkit-transition: .3s all ease;
