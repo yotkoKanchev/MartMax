@@ -1,8 +1,8 @@
 /* Base */
 body {
   max-width: 960px;
-margin-right: auto;
-margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 .items-center{
   justify-content: center;

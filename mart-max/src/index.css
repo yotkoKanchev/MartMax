@@ -25,4 +25,22 @@ img .img-sized {
   border-radius: 0;
 }
 
+.img-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.img-container img {
+    height: 100%;
+}
+
+.img-sq {
+  width: 13em;
+  height: 13em;
+}
+
+a:hover{
+  cursor: pointer;
+}
 

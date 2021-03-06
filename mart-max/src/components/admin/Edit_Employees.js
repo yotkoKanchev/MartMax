@@ -1,31 +1,17 @@
-import React, { useState, useEffect, useContext, Component } from 'react'
-import { fetchData, editData } from "./../../firebase";
+import React, { useState, useEffect } from 'react'
 
-const Edit_Employees = (props) => {
+import { fetchData } from "./../../firebase";
+import Employee from './Employee';
 
-    const initialFieldValues = {
-    }
+const Edit_Employees = () => {
 
-    var [values, setValues] = useState(initialFieldValues)
+    var [employeeObjects, setEmployeeObjects] = useState({})
+    var [currentId, setCurrentId] = useState('')
 
     useEffect(() => {
-        fetchData('employees', setValues, null);
+        fetchData('employees', setEmployeeObjects, null);
     }, [])
 
-    // const handleInputChange = e => {
-    //     var { name, value } = e.target;
-    //     setValues({
-    //         ...values,
-    //         [name]: value
-    //     })
-    // }
-
-    const handleFormSubmit = e => {
-        e.preventDefault();
-        editData('employees', null, values);
-    }
-
-    // console.log(values)
     return (
         <div className="site-section">
             <div className="container-fluid">
@@ -39,59 +25,16 @@ const Edit_Employees = (props) => {
                     </div>
                 </div>
                 <div className='row justify-content-center'>
-                    {Object.keys(values).map((key) => (
-                        <form key={key} autoComplete="off" className="col-md-5 mr-5" onSubmit={handleFormSubmit}>
-                            <div className="form-group input-group">
-                                <div className="input-group-text">
-                                    <span>Имена</span>
-                                </div>
-                                <input className="form-control" name="name"
-                                    value={values[key].name}
-                                // onChange={handleInputChange}
-                                />
-                            </div>
-                            <div className="form-group input-group">
-                                <div className="input-group-text">
-                                    <span>Телефон</span>
-                                </div>
-                                <input className="form-control" name="phone"
-                                    value={values[key].phone}
-                                // onChange={handleInputChange}
-                                />
-                            </div>
-                            <div className="form-group input-group">
-                                <div className="input-group-text">
-                                    <span>Длъжност</span>
-                                </div>
-                                <input className="form-control" name="title"
-                                    value={values[key].title}
-                                // onChange={handleInputChange}
-                                />
-                            </div>
-                            <div className="form-group input-group">
-                                <div className="input-group-text">
-                                    <span>Снимка</span>
-                                </div>
-                                <input className="form-control" name="img"
-                                    value={values[key].img}
-                                // onChange={handleInputChange}
-                                />
-                            </div>
-                            <p>Дейности:</p>
-                            {Object.keys(values[key].services).map((service) => (
-                                <div div className="form-group input-group">
-                                    <input className="form-control" name="phone"
-                                        value={values[key].services[service]}
-                                    // onChange={handleInputChange}
-                                    />
-                                </div>
+                    <div className="col-md-6">
+                        {
+                            Object.keys(employeeObjects).map((key) => (
+                                <input key={key} type="button" className="mb-4 btn btn-primary col-md-12" key={key} value={employeeObjects[key].name} onClick={() => { setCurrentId(key) }} />
                             ))
-                            }
-                            <div className="form-group">
-                                <input type="submit" value='Промени' className="btn btn-primary btn-block" />
-                            </div>
-                        </form>
-                    ))}
+                        }
+                    </div>
+                    <div className="col-md-6">
+                        <Employee {...({ currentId, employeeObjects })} />
+                    </div>
                 </div>
             </div>
         </div >

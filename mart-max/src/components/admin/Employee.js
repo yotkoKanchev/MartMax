@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { editData } from "./../../firebase";
+import { Redirect } from "react-router";
 
-const Employee = () => {
+const Employee = (props) => {
 
     const initialFieldValues = {
         name: '',
+        phone: '',
         title: '',
         img: '',
-        phone: '',
+        services: '',
+        redirectToReferrer: false,
     }
 
     var [values, setValues] = useState(initialFieldValues);
@@ -18,9 +22,9 @@ const Employee = () => {
             })
         else
             setValues({
-                ...props.contactObjects[props.currentId]
+                ...props.employeeObjects[props.currentId]
             })
-    }, [props.currentId, props.contactObjects])
+    }, [props.currentId, props.employeeObjects])
 
     const handleInputChange = e => {
         var { name, value } = e.target;
@@ -32,63 +36,84 @@ const Employee = () => {
 
     const handleFormSubmit = e => {
         e.preventDefault();
-        props.addOrEdit(values)
+        editData(`employees/${props.currentId}`, null, values);
+        setValues({
+            redirectToReferrer: true
+        });
+    }
+
+    const redirectToReferrer = values.redirectToReferrer;
+    if (redirectToReferrer) {
+        return <Redirect to="/about" />
     }
 
     return (
-        <div className="site-section">
-            <div className="container-fluid">
-                <div className="row justify-content-center">
-                    <div className="col-md-7">
-                        <div className="row mb-5">
-                            <div className="col-12 ">
-                                <h2 className="site-section-heading text-center">Редактиране на Rosen Petrov</h2>
-                            </div>
-                        </div>
+        <form autoComplete="off" onSubmit={handleFormSubmit}>
+            <div className="form-group col-md-12">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                        <span>Имена</span>
                     </div>
-                </div>
-                <div className="row">
-                    <form autoComplete="off" className="col-md-6" onSubmit={handleFormSubmit}>
-                        <div className="form-group input-group">
-                            <div className="input-group-text">
-                                <span>Заглавие</span>
-                            </div>
-                            <input className="form-control" name="title"
-                                value={values.title}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <div className="form-group input-group">
-                            <div className="input-group-text">
-                                <span>Текст</span>
-                            </div>
-                            <textarea className="form-control" name="text" rows="10"
-                                value={values.text}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <p>Максимум символа: {maxSymbols} оставащи: <span className={maxSymbols - values.text.length < 0 ? 'text-danger' : ''}>{maxSymbols - values.text.length}</span></p>
-                        <div className="form-group input-group">
-                            <div className="input-group-text">
-                                <span>Снимка</span>
-                            </div>
-                            <input className="form-control" name="img"
-                                value={values.img}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input type="submit" value='Промени' className="btn btn-primary btn-block" />
-                        </div>
-                    </form>
-                    <div className="col-md-6">
-                        <div className="d-flex justify-content-center">
-                            <img src={values.img} alt={values.title} className="img-fluid img-sized"></img>
-                        </div>
-                    </div>
+                    <input className="form-control" name="name"
+                        value={values.name}
+                        onChange={handleInputChange}
+                    />
                 </div>
             </div>
-        </div>
+            <div className="form-group col-md-12">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                        <span>Длъжност</span>
+                    </div>
+                    <input className="form-control" name="title"
+                        value={values.title}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            </div>
+            <div className="form-group col-md-12">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                        <span>Телефон</span>
+                    </div>
+                    <input className="form-control" name="phone"
+                        value={values.phone}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            </div>
+            <div className="form-group col-md-12">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                        <span>Снимка</span>
+                    </div>
+                    <input className="form-control" name="img"
+                        value={values.img}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            </div>
+            <div className="form-group col-md-12">
+                <div className="input-group-prepend">
+                    <div className="input-group-text">
+                        <span>Дейности</span>
+                    </div>
+                    <input className="form-control" name="services"
+                        value={values.services}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            </div>
+
+            <div className="form-group col-md-12">
+                <input type="submit" value="Промени" className="btn btn-primary btn-block" />
+            </div>
+            <div className="form-group col-md-12 d-flex justify-content-center">
+                <div className="img-container">
+                    <img src={values.img} alt={values.name} className="img-fluid rounded-circle"></img>
+                </div>
+            </div>
+        </form>
     );
 }
 
