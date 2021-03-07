@@ -8,10 +8,10 @@ const Edit_Contact = (props) => {
         city: '',
         address: '',
         email: '',
-        redirectToReferrer: false,
     }
 
     var [values, setValues] = useState(initialFieldValues)
+    var [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
     useEffect(() => {
         fetchData('contacts', setValues, null);
@@ -28,12 +28,11 @@ const Edit_Contact = (props) => {
     const handleFormSubmit = e => {
         e.preventDefault();
         editData('contacts', null, values);
-        setValues({
+        setRedirectToReferrer({
             redirectToReferrer: true
         });
     }
 
-    const redirectToReferrer = values.redirectToReferrer;
     if (redirectToReferrer) {
         let path = props.child ? '/' + props.child : '/' + props.collection;
         return <Redirect to={path} />

@@ -10,10 +10,10 @@ const Employee = (props) => {
         title: '',
         img: '',
         services: '',
-        redirectToReferrer: false,
     }
 
     var [values, setValues] = useState(initialFieldValues);
+    var [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
     useEffect(() => {
         if (props.currentId == '')
@@ -36,13 +36,17 @@ const Employee = (props) => {
 
     const handleFormSubmit = e => {
         e.preventDefault();
-        editData(`employees/${props.currentId}`, null, values);
-        setValues({
-            redirectToReferrer: true
-        });
+        // in case empty or new employee is added
+        if (props.currentId) {
+            console.log("no empty employee")
+
+            editData(`employees/${props.currentId}`, null, values);
+            setRedirectToReferrer({
+                redirectToReferrer: true
+            });
+        }
     }
 
-    const redirectToReferrer = values.redirectToReferrer;
     if (redirectToReferrer) {
         return <Redirect to="/about" />
     }
@@ -103,6 +107,7 @@ const Employee = (props) => {
                         onChange={handleInputChange}
                     />
                 </div>
+                <p className="text-danger">Дейностите да са разделени с: ", " (запетая и интервал)</p>
             </div>
 
             <div className="form-group col-md-12">

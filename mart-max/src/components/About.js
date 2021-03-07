@@ -17,14 +17,15 @@ const About = () => {
                 {
                     Object.keys(employees).map((key) => {
                         let employee = employees[key];
-                        let services = employee.services.split(", ");
+                        // in case there are no services
+                        let services = employee.services ? employee.services.split(", ") : [];
                         return (
                             <div key={key} className="col-md-6 col-lg-6 col-xl-6 text-center pt-5">
-                                <img src={employee.img} alt="Image" className="img-fluid img-sq rounded-circle mb-4"></img>
+                                <img src={employee.img} alt={employee.name} className="img-fluid img-sq rounded-circle mb-4"></img>
                                 <h2 className="font-weight-light mb-4">{employee.name}</h2>
                                 <h5>{employee.title}</h5>
-                                <h5 className="font-weight-light mb-4">тел.
-                                        <a href={employee.phone}>{employee.phone}</a>
+                                <h5 className="font-weight-light mb-4"><span className="mr-1">тел.</span>
+                                    <a href={employee.phone}>{employee.phone}</a>
                                 </h5>
 
                                 <ul className="text-center">

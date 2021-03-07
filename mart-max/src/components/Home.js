@@ -25,7 +25,9 @@ const Home = () => {
                                         <div className="image-info">
                                             <h2 className="mb-3">{menu.title}</h2>
                                         </div>
-                                        <img src={menu.img} alt={menu.title} className="img-fluid img-sized" />
+                                        <div className="square-container">
+                                            <img src={menu.img} alt={menu.title} className="img-fluid img-sized" />
+                                        </div>
                                     </div>
                                 </NavLink>
                             </div>

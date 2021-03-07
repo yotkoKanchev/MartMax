@@ -8,10 +8,10 @@ const Edit_Page = (props) => {
         title: '',
         text: '',
         img: '',
-        redirectToReferrer: false,
     }
 
     var [values, setValues] = useState(initialFieldValues)
+    var [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
     useEffect(() => {
         fetchData(props.collection, setValues, props.child);
@@ -28,12 +28,11 @@ const Edit_Page = (props) => {
     const handleFormSubmit = e => {
         e.preventDefault();
         editData(props.collection, props.child, values);
-        setValues({
+        setRedirectToReferrer({
             redirectToReferrer: true
         });
     }
 
-    const redirectToReferrer = values.redirectToReferrer;
     if (redirectToReferrer) {
         let path = props.child ? '/' + props.child : '/' + props.collection;
         return <Redirect to={path} />
@@ -85,8 +84,8 @@ const Edit_Page = (props) => {
                             <input type="submit" value='Промени' className="btn btn-primary btn-block" />
                         </div>
                     </form>
-                    <div className="col-md-6">
-                        <div className="d-flex justify-content-center">
+                    <div className="col-md-6 d-flex justify-content-center">
+                        <div className="square-container">
                             <img src={values.img} alt={values.title} className="img-fluid img-sized"></img>
                         </div>
                     </div>
