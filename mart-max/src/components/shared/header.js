@@ -23,13 +23,13 @@ const Header = () => {
                                 <span className="navbar-toggler-icon"></span>
                             </button>
 
-                            <ul className={`${isNavCollapsed ? 'collapse site-menu js-clone-nav mx-auto d-none d-lg-block' : ''} navbar-collapse site-menu js-clone-nav mx-auto d-none d-lg-block justify-content-center`} id="navbarsExample09">
+                            <ul className={`${isNavCollapsed ? 'collapse site-menu js-clone-nav mx-auto d-none d-lg-block' : ''} navbar-collapse site-menu js-clone-nav mx-auto d-none d-lg-block items-center`} id="navbarsExample09">
                                 <li className="active">
                                     {/* <NavLink exact to="/">Начало</NavLink> */}
                                     <a href='/'>Начало</a>
                                 </li>
-                                <li className="has-children">
-                                    <a className="active-link">Услуги</a>
+                                <li id="anchor" className="has-children">
+                                    <a className="active-link">Услуги <i id="icon" className="fas fa-chevron-down"></i></a>
                                     <ul className="dropdown">
                                         {/* <li><NavLink exact to="/heating" className="active-link">Отопление</NavLink></li>
                                         <li><NavLink exact to="/ac" className="active-link">Климатизация</NavLink></li>

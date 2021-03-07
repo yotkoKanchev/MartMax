@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Dashboard = () => {
     return (
         <div className="container-fluid">
-            <div className="row justify-content-center">
+            <div className="row items-center">
                 <div className="col-md-12">
                     <div className="row mb-5">
                         <div className="col-12 ">

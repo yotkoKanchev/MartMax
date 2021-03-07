@@ -102,7 +102,7 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Дейности</span>
                     </div>
-                    <input className="form-control" name="services"
+                    <textarea rows="3" className="form-control" name="services"
                         value={values.services}
                         onChange={handleInputChange}
                     />
@@ -113,7 +113,7 @@ const Employee = (props) => {
             <div className="form-group col-md-12">
                 <input type="submit" value="Промени" className="btn btn-primary btn-block" />
             </div>
-            <div className="form-group col-md-12 d-flex justify-content-center">
+            <div id="person-img" className="form-group col-md-12 d-flex items-center">
                 <div className="img-container">
                     <img src={values.img} alt={values.name} className="img-fluid rounded-circle"></img>
                 </div>

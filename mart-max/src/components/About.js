@@ -20,7 +20,7 @@ const About = () => {
                         // in case there are no services
                         let services = employee.services ? employee.services.split(", ") : [];
                         return (
-                            <div key={key} className="col-md-6 col-lg-6 col-xl-6 text-center pt-5">
+                            <div key={key} className="col-md-6 col-lg-6 col-xl-6 text-center rounded-container pt-5">
                                 <img src={employee.img} alt={employee.name} className="img-fluid img-sq rounded-circle mb-4"></img>
                                 <h2 className="font-weight-light mb-4">{employee.name}</h2>
                                 <h5>{employee.title}</h5>

@@ -41,7 +41,7 @@ const Edit_Page = (props) => {
     return (
         <div className="site-section">
             <div className="container-fluid">
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-md-7">
                         <div className="row mb-5">
                             <div className="col-12 ">
@@ -84,7 +84,7 @@ const Edit_Page = (props) => {
                             <input type="submit" value='Промени' className="btn btn-primary btn-block" />
                         </div>
                     </form>
-                    <div className="col-md-6 d-flex justify-content-center">
+                    <div className="col-md-6 d-flex items-center">
                         <div className="square-container">
                             <img src={values.img} alt={values.title} className="img-fluid img-sized"></img>
                         </div>

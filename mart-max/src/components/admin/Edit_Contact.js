@@ -41,7 +41,7 @@ const Edit_Contact = (props) => {
     return (
         <div className="site-section">
             <div className="container-fluid">
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-md-7">
                         <div className="row mb-5">
                             <div className="col-12 ">
@@ -50,7 +50,7 @@ const Edit_Contact = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <form autoComplete="off" className="col-md-6" onSubmit={handleFormSubmit}>
                         <div className="form-group input-group">
                             <div className="input-group-text">

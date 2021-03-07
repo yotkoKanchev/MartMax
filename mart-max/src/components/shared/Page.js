@@ -12,7 +12,7 @@ const Page = (props) => {
     return (
         <div className="site-section">
             <div className="container-fluid">
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-md-7">
                         <div className="row mb-5">
                             <div className="col-12 ">
@@ -22,7 +22,7 @@ const Page = (props) => {
                     </div>
                 </div>
 
-                <div className="row mb-5 justify-content-center">
+                <div className="row mb-5 items-center">
                     <div className="col-md-6 square-container">
                         <img src={values.img} alt={values.title} className="img-fluid"></img>
                     </div>

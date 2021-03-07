@@ -15,7 +15,7 @@ const Edit_Employees = () => {
     return (
         <div className="site-section">
             <div className="container-fluid">
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-md-7">
                         <div className="row mb-5">
                             <div className="col-12 ">
@@ -24,15 +24,15 @@ const Edit_Employees = () => {
                         </div>
                     </div>
                 </div>
-                <div className='row justify-content-center'>
+                <div className='row items-center'>
                     <div className="col-md-5">
                         {
                             Object.keys(employeeObjects).map((key) => (
-                                <input key={key} type="button" className="mb-4 btn btn-primary col-md-12" key={key} value={employeeObjects[key].name} onClick={() => { setCurrentId(key) }} />
+                                <input id="person" key={key} type="button" className="mb-4 btn btn-primary col-md-12" key={key} value={employeeObjects[key].name} onClick={() => { setCurrentId(key) }} />
                             ))
                         }
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-7 person-container">
                         <Employee {...({ currentId, employeeObjects })} />
                     </div>
                 </div>

@@ -28,7 +28,7 @@ const LoginForm = ({ history }) => {
     return (
         <div className="site-section" data-aos="fade">
             <div className="container">
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-md-7">
                         <div className="row mb-5">
                             <div className="col-12">
@@ -37,7 +37,7 @@ const LoginForm = ({ history }) => {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
+                <div className="row items-center">
                     <div className="col-lg-8 mb-5">
                         <form onSubmit={handleLogin}>
                             <div className="row form-group">
