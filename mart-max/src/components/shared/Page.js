@@ -22,7 +22,7 @@ const Page = (props) => {
                     </div>
                 </div>
 
-                <div className="row mb-5 items-center">
+                <div className="row mb-5 items-center mr-0 ml-0">
                     <div className="col-md-6 square-container">
                         <img src={values.img} alt={values.title} className="img-fluid"></img>
                     </div>
