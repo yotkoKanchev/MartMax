@@ -3,6 +3,7 @@ import { AuthContext } from "./../auth/Auth.js";
 import { NavLink } from "react-router-dom";
 
 import { signOut } from "./../../firebase";
+
 const Header = () => {
 
     const { currentUser } = useContext(AuthContext);

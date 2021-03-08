@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
 import "firebase/auth";
 
 var firebaseConfig = {
@@ -11,9 +12,9 @@ var firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-let db = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-export const fireDb = db.database().ref();
+export const fireDb = firebase.database().ref();
 
 export const fetchData = (collection, setFunction, child) => {
     let data = localStorage.getItem('firebase_data');
