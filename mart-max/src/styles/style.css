@@ -1,3 +1,13 @@
+@font-face {
+  font-family: externalFont;
+  src: url(fonts/miramax_font.ttf);
+}
+
+.logo {
+  font-family: externalFont;
+  letter-spacing: -0.10em;
+}
+
 /* Base */
 body {
   max-width: 960px;
@@ -98,11 +108,11 @@ a:hover {
 }
 
 @media (max-width: 992px) {
-  .site-section > div > div > div > p{
+  .site-section>div>div>div>p {
     padding-top: 5em;
   }
 
-  .site-section{
+  .site-section {
     padding-bottom: 0;
   }
 }
@@ -354,8 +364,8 @@ img:hover {
 }
 
 .rounded-container img {
-  width: 12em;
-  height: 12em;
+  width: 11em;
+  height: 11em;
   object-fit: cover;
 }
 
@@ -367,7 +377,6 @@ img:hover {
 }
 
 /* Edit Employees Image */
-
 .img-container {
   width: 10em;
   height: 10em;
@@ -385,12 +394,25 @@ img:hover {
 }
 
 @media(max-width: 992px) {
-  .person-container{
+  .person-container {
     margin-top: 15em;
   }
+
   #person-img {
     position: relative;
     left: -0.5em;
     bottom: 39em;
   }
+}
+
+/*Cookie Consent*/
+.footer {
+  position: relative;
+}
+
+.sticky {
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0;
 }

@@ -35,12 +35,12 @@ const Contact = () => {
                                     let nameArgs = employee.name.split(' ');
                                     let name = 'инж. ' + nameArgs[0][0] + '. ' + nameArgs[1];
                                     return (
-                                        <p key={name} className="mb-2"><span>{name} - </span><a href={employee.phone}>{employee.phone}</a></p>
+                                        <p key={name} className="mb-2"><span>{name} </span><a href={employee.phone.split(' ').join('')}>{employee.phone}</a></p>
                                     )
                                 })
                             }
                             <p className="mb-0 mt-4 font-weight-bold text-white">Имейл</p>
-                            <p className="mb-0"><a href="mailto: {contactsInfo.email}">{contacts.email}</a></p>
+                            <p className="mb-0"><a href={"mailto:" + contacts.email} > {contacts.email}</a></p>
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ const Page = (props) => {
                         <img src={values.img} alt={values.title} className="img-fluid"></img>
                     </div>
                     <div className="d-flex align-items-center col-md-4 ml-auto mt-2">
-                        <p>{values.text}</p>
+                        <p className="text-justify">{values.text}</p>
                     </div>
                 </div>
             </div>

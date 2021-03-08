@@ -18,7 +18,7 @@ const Header = () => {
                     <div className="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
                         <nav className="navbar navbar-expand-lg site-navigation position-relative text-right text-lg-center">
 
-                            <h1 className="mb-0"><a className="text-white h2 mb-0" href="/">{document.title.toUpperCase()}</a></h1>
+                            <h1 className="mb-0"><a className="text-white h2 mb-0 logo" href="/">{document.title.toUpperCase()}</a></h1>
 
                             <button className="custom-toggler navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
                                 <span className="navbar-toggler-icon"></span>
