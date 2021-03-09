@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { fetchData, editData } from "./../../firebase";
 import { Redirect } from "react-router";
+import { fetchData, editData } from "./../../firebase";
 
 const Edit_Page = (props) => {
     const maxSymbols = 400;
@@ -56,29 +56,20 @@ const Edit_Page = (props) => {
                             <div className="input-group-text">
                                 <span>Заглавие</span>
                             </div>
-                            <input className="form-control" name="title"
-                                value={values.title}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="title" value={values.title} onChange={handleInputChange} />
                         </div>
                         <div className="form-group input-group">
                             <div className="input-group-text">
                                 <span>Текст</span>
                             </div>
-                            <textarea className="form-control" name="text" rows="10"
-                                value={values.text}
-                                onChange={handleInputChange}
-                            />
+                            <textarea className="form-control" name="text" rows="10" value={values.text} onChange={handleInputChange} />
                         </div>
                         <p>Максимум символа: {maxSymbols} оставащи: <span className={maxSymbols - values.text.length < 0 ? 'text-danger' : ''}>{maxSymbols - values.text.length}</span></p>
                         <div className="form-group input-group">
                             <div className="input-group-text">
                                 <span>Снимка</span>
                             </div>
-                            <input className="form-control" name="img"
-                                value={values.img}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="img" value={values.img} onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
                             <input type="submit" value='Промени' className="btn btn-primary btn-block" />

@@ -14,7 +14,7 @@ const Home = () => {
     return (
 
         <div className="container-fluid">
-            <div className="row items-center">
+            <div className="row items-center" >
                 {
                     Object.keys(menus).map((key) => {
                         let menu = menus[key];
@@ -35,7 +35,7 @@ const Home = () => {
                     })
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

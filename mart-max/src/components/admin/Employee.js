@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { editData } from "./../../firebase";
 import { Redirect } from "react-router";
+import { editData } from "./../../firebase";
 
 const Employee = (props) => {
 
@@ -58,10 +58,7 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Имена</span>
                     </div>
-                    <input className="form-control" name="name"
-                        value={values.name}
-                        onChange={handleInputChange}
-                    />
+                    <input className="form-control" name="name" value={values.name} onChange={handleInputChange} />
                 </div>
             </div>
             <div className="form-group col-md-12">
@@ -69,10 +66,7 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Длъжност</span>
                     </div>
-                    <input className="form-control" name="title"
-                        value={values.title}
-                        onChange={handleInputChange}
-                    />
+                    <input className="form-control" name="title" value={values.title} onChange={handleInputChange} />
                 </div>
             </div>
             <div className="form-group col-md-12">
@@ -80,10 +74,7 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Телефон</span>
                     </div>
-                    <input className="form-control" name="phone"
-                        value={values.phone}
-                        onChange={handleInputChange}
-                    />
+                    <input className="form-control" name="phone" value={values.phone} onChange={handleInputChange} />
                 </div>
             </div>
             <div className="form-group col-md-12">
@@ -91,10 +82,7 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Снимка</span>
                     </div>
-                    <input className="form-control" name="img"
-                        value={values.img}
-                        onChange={handleInputChange}
-                    />
+                    <input className="form-control" name="img" value={values.img} onChange={handleInputChange} />
                 </div>
             </div>
             <div className="form-group col-md-12">
@@ -102,14 +90,10 @@ const Employee = (props) => {
                     <div className="input-group-text">
                         <span>Дейности</span>
                     </div>
-                    <textarea rows="3" className="form-control" name="services"
-                        value={values.services}
-                        onChange={handleInputChange}
-                    />
+                    <textarea rows="3" className="form-control" name="services" value={values.services} onChange={handleInputChange} />
                 </div>
                 <p className="text-danger">Дейностите да са разделени с: ", " (запетая и интервал)</p>
             </div>
-
             <div className="form-group col-md-12">
                 <input type="submit" value="Промени" className="btn btn-primary btn-block" />
             </div>

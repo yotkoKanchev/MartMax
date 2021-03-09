@@ -21,13 +21,12 @@ const Page = (props) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="row mb-5 items-center mr-0 ml-0">
                     <div className="col-md-6 square-container">
                         <img src={values.img} alt={values.title} className="img-fluid"></img>
                     </div>
                     <div className="d-flex align-items-center col-md-4 ml-auto mt-2">
-                        <p className="text-justify">{values.text}</p>
+                        <p>{values.text}</p>
                     </div>
                 </div>
             </div>

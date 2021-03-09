@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import { fetchData } from "./../../firebase";
 import Employee from './Employee';
+import { fetchData } from "./../../firebase";
 
 const Edit_Employees = () => {
 

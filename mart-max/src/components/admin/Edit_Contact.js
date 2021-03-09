@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { fetchData, editData } from "./../../firebase";
 import { Redirect } from "react-router";
+import { fetchData, editData } from "./../../firebase";
 
 const Edit_Contact = (props) => {
     const initialFieldValues = {
@@ -56,37 +56,25 @@ const Edit_Contact = (props) => {
                             <div className="input-group-text">
                                 <span>Заглавие</span>
                             </div>
-                            <input className="form-control" name="title"
-                                value={values.title}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="title" value={values.title} onChange={handleInputChange} />
                         </div>
                         <div className="form-group input-group">
                             <div className="input-group-text">
                                 <span>Град</span>
                             </div>
-                            <input className="form-control" name="city"
-                                value={values.city}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="city" value={values.city} onChange={handleInputChange} />
                         </div>
                         <div className="form-group input-group">
                             <div className="input-group-text">
                                 <span>Адрес</span>
                             </div>
-                            <input className="form-control" name="address"
-                                value={values.address}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="address" value={values.address} onChange={handleInputChange} />
                         </div>
                         <div className="form-group input-group">
                             <div className="input-group-text">
                                 <span>Имейл</span>
                             </div>
-                            <input className="form-control" name="email"
-                                value={values.email}
-                                onChange={handleInputChange}
-                            />
+                            <input className="form-control" name="email" value={values.email} onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
                             <input type="submit" value='Промени' className="btn btn-primary btn-block" />

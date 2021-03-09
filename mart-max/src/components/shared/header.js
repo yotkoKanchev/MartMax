@@ -26,16 +26,11 @@ const Header = () => {
 
                             <ul className={`${isNavCollapsed ? 'collapse site-menu js-clone-nav mx-auto d-none d-lg-block' : ''} navbar-collapse site-menu js-clone-nav mx-auto d-none d-lg-block items-center`} id="navbarsExample09">
                                 <li className="active">
-                                    {/* <NavLink exact to="/">Начало</NavLink> */}
                                     <a href='/'>Начало</a>
                                 </li>
                                 <li id="anchor" className="has-children">
                                     <a className="active-link">Услуги <i id="icon" className="fas fa-chevron-down"></i></a>
                                     <ul className="dropdown">
-                                        {/* <li><NavLink exact to="/heating" className="active-link">Отопление</NavLink></li>
-                                        <li><NavLink exact to="/ac" className="active-link">Климатизация</NavLink></li>
-                                        <li><NavLink exact to="/ventilation" className="active-link">Вентилация</NavLink></li>
-                                        <li><NavLink exact to="/design" className="active-link">Проектиране</NavLink></li> */}
                                         <li><a href='/heating'>Отопление</a></li>
                                         <li><a href='/ac'>Климатизация</a></li>
                                         <li><a href='/ventilation'>Вентилация</a></li>
@@ -43,14 +38,10 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    {/* <NavLink exact to="/about" className='active'>За Нас</NavLink> */}
                                     <a className="active-link" href='/about'>За Нас</a>
-
                                 </li>
                                 <li>
-                                    {/* <NavLink exact to="/contact" className="active-link">Контакти</NavLink> */}
                                     <a className="active-link" href='/contact'>Контакти</a>
-
                                 </li>
                                 {
                                     currentUser ?

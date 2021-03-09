@@ -19,6 +19,7 @@ const About = () => {
                         let employee = employees[key];
                         // in case there are no services
                         let services = employee.services ? employee.services.split(", ") : [];
+
                         return (
                             <div key={key} className="col-md-6 col-lg-6 col-xl-6 text-center rounded-container pt-5">
                                 <img src={employee.img} alt={employee.name} className="img-fluid img-sq rounded-circle mb-4"></img>

@@ -15,7 +15,6 @@ body.loaded .site-main {
   transform: translateY(0);
  }
 
-
 .site-navbar {
   opacity: 0;
   transform: translateY(-3em);

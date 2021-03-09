@@ -13,7 +13,6 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className="col-md-7 pt-5">
                         <table className="table table-borderless table-striped">
                             <thead className="thead-light">
@@ -78,7 +77,6 @@ const Dashboard = () => {
                                     <td className="bg-light">
                                         <a className="btn text-primary" target="_blank" href="/about">Разгледай</a>
                                         <NavLink exact to="edit-employees" className="btn text-danger">Промени</NavLink>
-
                                     </td>
                                 </tr>
                             </tbody>

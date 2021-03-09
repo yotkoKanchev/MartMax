@@ -21,7 +21,7 @@ body {
 
 body {
   line-height: 1.7;
-  color: #777;
+  color: #999;
   font-weight: 300;
   font-size: 1rem;
   background: #000;
@@ -119,8 +119,8 @@ a:hover {
 
 input::selection,
 textarea::selection {
-  color: black;
-  background: white;
+  color: #000;
+  background: #fff;
 }
 
 .site-section-heading:after {
@@ -177,7 +177,7 @@ textarea::selection {
   padding: 10px 10px;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: rgba(255, 255, 255, 0.5);
+  color: #999;
   font-size: 12px;
   text-decoration: none !important;
 }
@@ -341,7 +341,7 @@ img:hover {
 .image-wrap-2 {
   position: relative;
   text-align: center;
-  color: white;
+  color: #000;
 }
 
 .image-info {
