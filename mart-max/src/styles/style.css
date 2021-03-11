@@ -21,7 +21,7 @@ body {
 
 body {
   line-height: 1.7;
-  color: #999;
+  color: #888;
   font-weight: 300;
   font-size: 1rem;
   background: #000;
@@ -177,7 +177,7 @@ textarea::selection {
   padding: 10px 10px;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: #999;
+  color: #888;
   font-size: 12px;
   text-decoration: none !important;
 }
@@ -341,7 +341,7 @@ img:hover {
 .image-wrap-2 {
   position: relative;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 
 .image-info {
